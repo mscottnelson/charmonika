@@ -1,6 +1,6 @@
-/* @pjs font="https://fonts.google.com/specimen/Raleway?selection.family=Raleway"; globalKeyEvents="true"; */
+/* @pjs font="Raleway-Bold.ttf"; globalKeyEvents="true"; */
 
-PFont myfont = createFont("Raleway",20);
+PFont myfont = createFont("Raleway-Bold.ttf",20);
 
 float oscil, oscil2 = 0;
 float period = 60; /* Set speed of oscillator (for animations, etc) */
