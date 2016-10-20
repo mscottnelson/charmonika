@@ -1,0 +1,80 @@
+body{
+	margin:0;
+	padding:0;
+	border:0;
+	width:100%;
+	font-family: "Century Gothic", Arial, Helvetica;
+	text-align: left;
+	color: #fbc86d;
+	z-index: 2;
+	background: #111111;
+}
+
+#start{
+	width: 100px;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: -4 !important; 
+}
+
+@media only screen and (min-width: 899px) {
+  	.left.col { width: 31%; margin: 0px; padding-left: 20px; }
+	.middle.col { left: 33%; width: 31%; margin: 0px; padding-left: 20px;} 
+	.right.col { width: 31%; margin: 0px; right: 20px;}
+}
+
+@media only screen and (max-width: 899px) {
+  	.left.col { position: relative; width: 80%; margin: auto;}
+	.middle.col { position: relative; width: 80%; margin: auto;} 
+	.right.col { position: relative;}
+}
+
+.row, .col { position: absolute; }
+.row { left: 0; right: 0; }
+.col { top: 0; bottom: 0;}
+.scroll-x, .scroll-y { -webkit-overflow-scrolling: touch;}
+.scroll-x { overflow-x: auto; }
+.scroll-y { overflow-y: auto; }
+.header.row { height: 140px; top: 0; background-image:url('images/texture.png');}
+.body.row { top: 140px; bottom: 0; background-image:url('images/texture.png'); overflow: auto;}
+.footer.row { height: 1.25em; bottom: 0; font-size:.4em; text-align: center; padding: 0px; background: #000000;}
+.footer.row p {margin: 0;}
+
+a{ 
+	color: #c8e0ff;
+	text-decoration: none;
+}
+
+a:hover{
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+audio{
+	width: 250px;
+}
+
+#canv{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+/*	z-index: -2 !important;  */
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	animation: fadein 7s;
+    -moz-animation: fadein 7s; /* Firefox */
+    -webkit-animation: fadein 7s; /* Safari and Chrome */
+    -o-animation: fadein 7s; /* Opera */
+}
+
+iframe{
+	animation: fadein 5s;
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+    -moz-animation: fadein 5s; /* Firefox */
+    -webkit-animation: fadein 5s; /* Safari and Chrome */
+    -o-animation: fadein 5s; /* Opera */
+}
