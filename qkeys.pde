@@ -1,6 +1,6 @@
-/* @pjs font="Neutra2.otf"; globalKeyEvents="true"; */
+/* @pjs font="https://fonts.google.com/specimen/Raleway?selection.family=Raleway"; globalKeyEvents="true"; */
 
-PFont myfont = createFont("Neutra2.otf",20);
+PFont myfont = createFont("Raleway",20);
 
 float oscil, oscil2 = 0;
 float period = 60; /* Set speed of oscillator (for animations, etc) */
@@ -34,33 +34,33 @@ void setup()
 			hArray[i][j] = new HexT(i,j);
 		}
 	}
-	
+
 }
 
 void draw()
 {
 
-	
+
 	background(bgColor);
-	
+
 	fill(textC);
 	text(lastNote, 25, height - 25);
 	text("Charmonika v.2", 25, 25);
 	text("by Michael Scott-Nelson", 25, 50);
 	text("Type or click to play. Number of simultaneous keypresses limited by N-key rollover", 25, 100);
-	
+
 	/* center qkeys, track mouse position relative to origin */
 	translate(width/6, height/3);
 	mouseXabs = (mouseX - width/6);
 	mouseYabs = (mouseY - height/3);
-	
+
 	/* Zoom  */
 	/* Move screen */
 	translate(screenX, screenY);
-	
-	
+
+
 	pushMatrix();
-		noStroke();	
+		noStroke();
 		for(int i=0; i<hArray.length; i++){
 			for(int j=0; j<hArray[i].length; j++){
 				hArray[i][j].update();
@@ -180,7 +180,7 @@ class HexT{
 
 	void update(){
 		/* Draw the hex, but exclude tiles for shift and return */
-		if((hxPos == 10 && hyPos == 3) || (hxPos == 11 && hyPos == 2) || (hxPos == 11 && hyPos == 3)){} 
+		if((hxPos == 10 && hyPos == 3) || (hxPos == 11 && hyPos == 2) || (hxPos == 11 && hyPos == 3)){}
 		else {
 			pushMatrix();
 			translate(xOff+active/6,yOff-active/6);
@@ -188,7 +188,7 @@ class HexT{
 			text(key, -width/420+kOffset, height/175);
 			rotate(active);
 			fill(color(255-blackKey,255-blackKey,255-blackKey,-active*4+100));
-			if(active < -1){	
+			if(active < -1){
 				active++;
 			}
 			beginShape();{
@@ -201,7 +201,7 @@ class HexT{
 				}endShape(CLOSE);
 			popMatrix();
 			}
-			
+
 			/* Determine if the current hex contains the mouse,
 			set the mouseLocation to the hex (BEWARE, MAY BE SENDING DOUBLE VALUES!) */
 			if(mouseXabs > xOff - width/38 && mouseXabs < xOff + width/38){
@@ -210,7 +210,7 @@ class HexT{
 				}
 			}
 		}
-	
+
 	void activate(i, k){
 		if(active > -59){
 			active = -60;
@@ -218,13 +218,13 @@ class HexT{
 			// key = k; <--updates display to show key pressed. Currently unused!
 			}
 		}
-		
+
 	void activateSilent(i, k){
 		if(active > -59){
 			active = active-10;
 			}
 		}
-		
+
 }
 
 void keyPressed() {
@@ -272,7 +272,7 @@ void keyPressed() {
 	if(key == '[' || key == '\{'){hArray[10][1].activate(31, key); lastNote = 'D#6';}
 	if(key == '\'' || key == 34){hArray[10][2].activate(32, key); lastNote = 'E6';}
 	if(key == '=' || key == 43){hArray[11][0].activate(33, key); lastNote = 'F6';}
-	if(key == ']' || key == '\}'){hArray[11][1].activate(34, key); lastNote = 'F#6';}				
+	if(key == ']' || key == '\}'){hArray[11][1].activate(34, key); lastNote = 'F#6';}
 }
 
 void mousePressed() {
@@ -283,7 +283,7 @@ void mouseReleased() {
 	locked = false;
 }
 
-		
+
 		// ONLY USE THIS SECTION FOR THE WEB
 		// putting this javascript function in the processing sketch lets
 		// the sketch's values for width and height get updated on resize.
@@ -298,7 +298,7 @@ void mouseReleased() {
 			canvElem.setAttribute("height", newHeight);
 			canvElem.style.top = 0 +"px";
 			canvElem.style.left = 0 +"px";
-			// size() is Processing, everything else 
+			// size() is Processing, everything else
 			// in this function is javascript
 			size(newWidth, newHeight);
 			/* Initialize a 'grid' of hexes */
